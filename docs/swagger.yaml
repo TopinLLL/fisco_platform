@@ -1,0 +1,178 @@
+basePath: /
+host: localhost:9091
+info:
+  contact: {}
+  title: fisco_bcos
+paths:
+  /add/role:
+    post:
+      parameters:
+      - description: 角色id
+        in: formData
+        name: role_id
+        type: string
+      - description: 角色名称
+        in: formData
+        name: role_name
+        type: string
+      responses: {}
+      summary: 添加用户
+      tags:
+      - 管理员操作
+  /data/delete:
+    post:
+      parameters:
+      - description: 数据名称
+        in: formData
+        name: data_name
+        type: string
+      - description: 数据内容
+        in: formData
+        name: data_content
+        type: string
+      responses: {}
+      summary: 数据提供用户删除数据
+      tags:
+      - 数据提供用户操作
+  /data/jugde:
+    post:
+      parameters:
+      - description: 数据ID
+        in: formData
+        name: data_id
+        type: string
+      - description: 该数据是否合法
+        in: formData
+        name: agree
+        type: boolean
+      responses: {}
+      summary: 审计数据同步至主平台
+      tags:
+      - 审计用户操作
+  /data/provide:
+    post:
+      parameters:
+      - description: 数据名称
+        in: formData
+        name: data_name
+        type: string
+      - description: 数据内容
+        in: formData
+        name: data_content
+        type: string
+      responses: {}
+      summary: 数据提供用户提供数据
+      tags:
+      - 数据提供用户操作
+  /data/thumbdown:
+    post:
+      parameters:
+      - description: 数据名称
+        in: formData
+        name: data_name
+        type: string
+      - description: 数据内容
+        in: formData
+        name: data_content
+        type: string
+      responses: {}
+      summary: 数据浏览用户点灭数据
+      tags:
+      - 数据浏览用户操作
+  /data/thumbup:
+    post:
+      parameters:
+      - description: 数据名称
+        in: formData
+        name: data_name
+        type: string
+      - description: 数据内容
+        in: formData
+        name: data_content
+        type: string
+      responses: {}
+      summary: 数据浏览用户点赞热点数据
+      tags:
+      - 数据浏览用户操作
+  /login:
+    post:
+      parameters:
+      - description: 账号
+        in: formData
+        name: username
+        type: string
+      - description: 密码
+        in: formData
+        name: password
+        type: string
+      responses: {}
+      summary: 用户登录
+      tags:
+      - 登录
+  /register:
+    post:
+      parameters:
+      - description: 账号
+        in: formData
+        name: username
+        type: string
+      - description: 密码
+        in: formData
+        name: password
+        type: string
+      - description: 角色id
+        in: formData
+        name: role_id
+        type: string
+      - description: 邮箱
+        in: formData
+        name: mail
+        type: string
+      responses: {}
+      summary: 用户注册
+      tags:
+      - 常规用户操作
+  /show/hot:
+    get:
+      responses: {}
+      summary: 数据浏览用户查看热点数据
+      tags:
+      - 数据浏览用户操作
+  /system/aggregate:
+    post:
+      parameters:
+      - description: 是否开启聚合
+        in: formData
+        name: start
+        type: boolean
+      responses: {}
+      summary: 系统聚合数据
+      tags:
+      - 系统操作
+  /verify/email:
+    post:
+      parameters:
+      - description: 验证邮件
+        in: formData
+        name: verify_email
+        type: string
+      responses: {}
+      summary: 智能合约用户确认邮件
+      tags:
+      - 智能合约用户操作
+  /verify/user:
+    post:
+      parameters:
+      - description: 申请id
+        in: formData
+        name: offer_id
+        type: string
+      - description: 是否同意创建
+        in: formData
+        name: ok
+        type: boolean
+      responses: {}
+      summary: 处理用户账号申请
+      tags:
+      - 管理员操作
+swagger: "2.0"

@@ -1,0 +1,136 @@
+[fisco_bcos]2023/04/13 - 10:45:52.017	[31merror[0m	D:/Code/GoCode/fisco/api/common/register.go:29	用户已经存在，请勿重复申请
+[fisco_bcos]2023/04/13 - 12:17:28.288	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	redigo: get on closed pool
+[fisco_bcos]2023/04/13 - 12:17:43.055	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	redigo: get on closed pool
+[fisco_bcos]2023/04/13 - 12:18:30.681	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	redigo: get on closed pool
+[fisco_bcos]2023/04/13 - 12:18:44.101	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	redigo: get on closed pool
+[fisco_bcos]2023/04/13 - 12:18:56.861	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	redigo: get on closed pool
+[fisco_bcos]2023/04/13 - 12:20:33.851	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	redigo: get on closed pool
+[fisco_bcos]2023/04/13 - 12:22:36.347	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	redigo: get on closed pool
+[fisco_bcos]2023/04/13 - 12:49:55.690	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	密码错误
+[fisco_bcos]2023/04/13 - 12:50:08.399	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	密码错误
+[fisco_bcos]2023/04/13 - 12:51:49.106	[31merror[0m	D:/Code/GoCode/fisco/api/common/register.go:29	您已经申请过了,请勿重复提交
+[fisco_bcos]2023/04/13 - 12:53:04.556	[31merror[0m	D:/Code/GoCode/fisco/api/common/register.go:29	您已经申请过了,请勿重复提交
+[fisco_bcos]2023/04/13 - 12:55:18.578	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	密码错误
+[fisco_bcos]2023/04/13 - 12:56:15.066	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	密码错误
+[fisco_bcos]2023/04/13 - 13:06:40.503	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:22	确认错误
+[fisco_bcos]2023/04/13 - 13:08:34.395	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:22	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:08:51.757	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:22	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:09:08.028	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:09:30.728	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:10:09.341	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:10:31.281	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:15:48.221	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:17:58.190	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:20:08.348	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:21:42.381	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:22:07.354	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:22:11.290	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:23:10.231	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:23:12.307	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:23:14.662	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:23:38.774	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:26:17.182	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:34:04.140	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	密码错误
+[fisco_bcos]2023/04/13 - 13:35:03.660	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	密码错误
+[fisco_bcos]2023/04/13 - 13:35:18.036	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	密码错误
+[fisco_bcos]2023/04/13 - 13:39:00.777	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 13:41:03.663	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:24	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 14:06:13.263	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:23	Error 1054 (42S22): Unknown column 'verify' in 'field list'
+[fisco_bcos]2023/04/13 - 14:11:45.646	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:23	您已确认过邮件，请勿重复确认
+[fisco_bcos]2023/04/13 - 14:12:04.490	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	密码错误
+[fisco_bcos]2023/04/13 - 14:12:07.000	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	密码错误
+[fisco_bcos]2023/04/13 - 14:12:54.833	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	密码错误
+[fisco_bcos]2023/04/13 - 14:13:57.962	[31merror[0m	D:/Code/GoCode/fisco/api/common/login.go:23	用户不存在，请先注册
+[fisco_bcos]2023/04/13 - 14:16:14.920	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:23	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 14:19:57.882	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:23	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 14:20:00.477	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:23	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 14:20:56.813	[31merror[0m	D:/Code/GoCode/fisco/api/contractuser/verify.go:23	申请失败，邮件错误
+[fisco_bcos]2023/04/13 - 18:57:36.541	[31merror[0m	D:/Code/GoCode/fisco/api/datauser/provide.go:22	ERR wrong number of arguments for 'hset' command
+[fisco_bcos]2023/04/13 - 18:59:43.681	[31merror[0m	D:/Code/GoCode/fisco/api/datauser/provide.go:22	ERR wrong number of arguments for HMSET
+[fisco_bcos]2023/04/13 - 19:24:35.435	[31merror[0m	D:/Code/GoCode/fisco/api/datauser/provide.go:22	您已提供过数据，请勿重复提供
+[fisco_bcos]2023/04/13 - 19:25:50.612	[31merror[0m	D:/Code/GoCode/fisco/api/datauser/provide.go:22	您已提供过数据，请勿重复提供
+[fisco_bcos]2023/04/13 - 19:29:14.921	[31merror[0m	D:/Code/GoCode/fisco/api/datauser/provide.go:22	您已提供过数据，请勿重复提供
+[fisco_bcos]2023/04/14 - 09:34:07.504	[31merror[0m	D:/Code/GoCode/fisco/api/common/register.go:29	用户已经存在，请勿重复申请
+[fisco_bcos]2023/04/14 - 10:34:42.730	[31merror[0m	D:/Code/GoCode/fisco/api/datauser/delete.go:22	尚未存在数据，删除失败
+[fisco_bcos]2023/04/14 - 10:41:01.513	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: nil
+[fisco_bcos]2023/04/14 - 10:41:57.448	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: nil
+[fisco_bcos]2023/04/14 - 12:57:47.666	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/14 - 12:58:32.989	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/14 - 13:01:14.107	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/14 - 13:05:10.306	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	您已点赞，请勿重复点赞
+[fisco_bcos]2023/04/14 - 13:59:39.295	[31merror[0m	D:/Code/GoCode/fisco/api/datauser/provide.go:22	您已提供过数据，请勿重复提供
+[fisco_bcos]2023/04/14 - 14:03:39.725	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:22	您已点赞，请勿重复点赞
+[fisco_bcos]2023/04/14 - 14:04:21.358	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:22	您已点赞，请勿重复点赞
+[fisco_bcos]2023/04/14 - 14:04:51.200	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_down_data.go:21	redis: nil
+[fisco_bcos]2023/04/14 - 14:13:59.183	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:22	您已点赞，请勿重复点赞
+[fisco_bcos]2023/04/14 - 14:20:29.416	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_down_data.go:21	您已点灭，请勿重复点灭
+[fisco_bcos]2023/04/17 - 09:09:52.021	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	您已点赞，请勿重复点赞
+[fisco_bcos]2023/04/17 - 10:34:47.381	[31merror[0m	D:/Code/GoCode/fisco/api/datauser/provide.go:22	redis: nil
+[fisco_bcos]2023/04/17 - 11:05:11.868	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: can't marshal []string (implement encoding.BinaryMarshaler)
+[fisco_bcos]2023/04/17 - 11:07:16.155	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: can't marshal []string (implement encoding.BinaryMarshaler)
+[fisco_bcos]2023/04/17 - 11:07:33.117	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: can't marshal []string (implement encoding.BinaryMarshaler)
+[fisco_bcos]2023/04/17 - 11:07:39.184	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: can't marshal []string (implement encoding.BinaryMarshaler)
+[fisco_bcos]2023/04/17 - 11:08:45.089	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: can't marshal []string (implement encoding.BinaryMarshaler)
+[fisco_bcos]2023/04/17 - 11:09:09.409	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: can't marshal []string (implement encoding.BinaryMarshaler)
+[fisco_bcos]2023/04/17 - 11:09:15.296	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: can't marshal []string (implement encoding.BinaryMarshaler)
+[fisco_bcos]2023/04/17 - 11:09:39.400	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: can't marshal []string (implement encoding.BinaryMarshaler)
+[fisco_bcos]2023/04/17 - 11:13:40.140	[31merror[0m	D:/Code/GoCode/fisco/api/datauser/provide.go:22	unexpected end of JSON input
+[fisco_bcos]2023/04/17 - 11:20:24.599	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: can't marshal []string (implement encoding.BinaryMarshaler)
+[fisco_bcos]2023/04/17 - 11:21:14.598	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: can't marshal []string (implement encoding.BinaryMarshaler)
+[fisco_bcos]2023/04/17 - 11:21:58.882	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/show_hot_data.go:18	redis: can't marshal []string (implement encoding.BinaryMarshaler)
+[fisco_bcos]2023/04/17 - 16:21:30.813	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:21:32.807	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:21:34.808	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:21:36.808	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:21:38.817	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:21:40.819	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:21:42.809	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:21:44.821	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:21:46.818	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:21:48.820	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:21:50.815	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:23:25.218	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:23:27.218	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:23:29.210	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:23:31.210	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:23:33.213	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:24:50.081	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 16:25:22.033	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:32	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 17:18:57.209	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	sql: converting argument $9 type: unsupported type model.DataThumbDetail, a struct
+[fisco_bcos]2023/04/17 - 18:10:49.702	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:13:36.979	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:15:47.225	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:16:48.826	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:17:32.270	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:18:33.947	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:19:05.814	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:19:05.931	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:19:06.062	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:19:06.180	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:19:06.306	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:19:06.448	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:19:06.555	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:19:06.685	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:19:10.189	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:19:30.947	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:20:24.708	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:20:44.358	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:20:54.688	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:21:39.313	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:21:39.422	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:21:39.555	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:21:39.675	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:21:39.811	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:21:39.934	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:21:40.058	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:21:40.185	[31merror[0m	D:/Code/GoCode/fisco/api/generaluser/thumb_up_data.go:23	redis: nil
+[fisco_bcos]2023/04/17 - 18:21:44.135	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:21:57.642	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:24:04.944	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 18:27:32.041	[31merror[0m	D:/Code/GoCode/fisco/api/system/aggregate_to_redis.go:29	暂无可聚合数据，请暂时关闭此功能
+[fisco_bcos]2023/04/17 - 19:51:15.643	[31merror[0m	D:/Code/GoCode/fisco/api/judge/judge_upload_data.go:25	Error 1146 (42S02): Table 'fisco_bcos.data_judge' doesn't exist
+[fisco_bcos]2023/04/18 - 09:45:55.773	[31merror[0m	D:/Code/GoCode/fisco/client/client.go:35	EOF
+[fisco_bcos]2023/04/18 - 09:49:07.848	[31merror[0m	D:/Code/GoCode/fisco/client/client.go:36	EOF
+[fisco_bcos]2023/04/18 - 12:20:08.152	[31merror[0m	D:/Code/GoCode/fisco/casbin/casbin.go:13	unknown time zone Localcasbin
+[fisco_bcos]2023/04/18 - 12:25:38.011	[31merror[0m	D:/Code/GoCode/fisco/casbin/casbin.go:14	dial tcp :0: connectex: The requested address is not valid in its context.
+[fisco_bcos]2023/04/18 - 12:27:34.442	[31merror[0m	D:/Code/GoCode/fisco/casbin/casbin.go:21	Error 1049 (42000): Unknown database '%!(extra string=fisco_bcos)'

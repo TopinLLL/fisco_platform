@@ -1,0 +1,15 @@
+[Network]
+Type="channel"
+CAFile="./keyboard/ca.crt"
+Cert="./keyboard/sdk.crt"
+Key="./keyboard/sdk.key"
+[[Network.Connection]]
+NodeURL="123.57.211.11:20200"
+GroupID=1
+
+[Account]
+KeyFile="0x7bf0bfd054cac716ca10eaaf452f3cc02283a2ef.pem"
+
+[Chain]
+ChainID=1
+SMCrypto=false
