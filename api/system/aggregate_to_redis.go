@@ -1,7 +1,6 @@
 package system
 
 import (
-	"fisco/config"
 	"fisco/service/system"
 	"fisco/utils/response"
 	"strconv"
@@ -26,12 +25,12 @@ func AggregateToRedis(ctx *gin.Context) {
 			case <-aggregateTicker.C:
 				err := system.AggregateToRedis()
 				if err != nil {
-					config.Logger.Error(err.Error())
+					//config.Logger.Error(err.Error())
 					response.GeneralFail(ctx, nil, err.Error())
 					aggregateTicker.Stop()
 					break
 				} else {
-					config.Logger.Info("聚合数据成功")
+					//config.Logger.Info("聚合数据成功")
 					response.Success(ctx, nil, "聚合数据成功")
 				}
 			}

@@ -1,7 +1,6 @@
 package common
 
 import (
-	"fisco/config"
 	"fisco/service/common"
 	"fisco/utils/response"
 	"strconv"
@@ -26,9 +25,9 @@ func Register(ctx *gin.Context) {
 	verify, err := common.Register(ctx, username, password, roleIDNum, mail)
 	if err != nil {
 		response.GeneralFail(ctx, nil, err.Error())
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 	} else {
 		response.Success(ctx, *verify, "已提交用户申请")
-		config.Logger.Info("已提交用户申请")
+		//config.Logger.Info("已提交用户申请")
 	}
 }

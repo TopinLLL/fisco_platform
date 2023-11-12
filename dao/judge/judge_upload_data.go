@@ -5,7 +5,7 @@ import (
 	"fisco/model"
 )
 
-func JudgeUploadData(agree bool, dataID int) error {
+func UploadData(agree bool, dataID int) error {
 	data := model.Data{}
 	err := config.DB.Model(&model.Data{}).Where("id=?", dataID).Find(&data).Error
 	if err != nil {

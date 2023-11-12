@@ -1,7 +1,6 @@
 package datauser
 
 import (
-	"fisco/config"
 	"fisco/service/datauser"
 	"fisco/utils/response"
 
@@ -19,10 +18,10 @@ func ProvideData(ctx *gin.Context) {
 	dataContent := ctx.PostForm("data_content")
 	err := datauser.ProvideData(ctx, "sessionID", dataName, dataContent)
 	if err != nil {
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 		response.GeneralFail(ctx, nil, err.Error())
 	} else {
-		config.Logger.Info("数据提供成功")
+		//config.Logger.Info("数据提供成功")
 		response.Success(ctx, nil, "数据提供成功")
 	}
 }

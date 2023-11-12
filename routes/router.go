@@ -2,15 +2,14 @@ package routes
 
 import (
 	"fisco/api/admin"
+	"fisco/api/chain"
 	"fisco/api/common"
 	"fisco/api/contractuser"
 	"fisco/api/datauser"
 	"fisco/api/generaluser"
 	"fisco/api/judge"
 	"fisco/api/system"
-	"fisco/casbin"
 	"fisco/docs"
-	"fisco/middleware"
 
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
@@ -23,8 +22,13 @@ func NewRouter() (r *gin.Engine) {
 	docs.SwaggerInfo.BasePath = "/"
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	r.POST("/login", common.Login)
+	r.GET("/blockchain/height", chain.GetChainHeight)
+	r.GET("/blockchain/contract/deploy", chain.DeploySmartContract)
+	r.POST("/blockchain/contract/set", chain.SetTransaction)
+	r.GET("/blockchain/contract/get", chain.GetDataFromBlockChain)
+
 	//使用权限验证中间件
-	r.Use(middleware.NewAuthorizer(casbin.E))
+	//r.Use(middleware.NewAuthorizer(casbin.E))
 	r.POST("/add/role", admin.AddRole)
 	r.POST("/register", common.Register)
 	r.POST("/verify/user", admin.VerifyUser)

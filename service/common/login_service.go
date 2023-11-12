@@ -9,7 +9,6 @@ import (
 )
 
 func Login(ctx *gin.Context, username, password string) (string, error) {
-
 	//数据库中查询是否存在用户
 	user, err := common.Login(username, password)
 	if err != nil {
@@ -45,5 +44,4 @@ func Login(ctx *gin.Context, username, password string) (string, error) {
 		return "", err
 	}
 	return session.ID, nil
-
 }

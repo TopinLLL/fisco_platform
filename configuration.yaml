@@ -27,7 +27,7 @@ mail:
 zap:
   level: info
   format: console
-  prefix: '[fisco_bcos]'
+  prefix: '[blockchain_platform]'
   director: log
   show-line: true
   encode-level: LowercaseColorLevelEncoder

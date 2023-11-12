@@ -20,9 +20,9 @@ func Verify(ctx *gin.Context) {
 	err := contractuser.Verify(username.(string), verifyEmail)
 	if err != nil {
 		response.GeneralFail(ctx, nil, err.Error())
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 	} else {
 		response.Success(ctx, nil, "确认成功")
-		config.Logger.Info("确认成功")
+		//config.Logger.Info("确认成功")
 	}
 }

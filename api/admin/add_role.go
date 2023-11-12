@@ -1,7 +1,6 @@
 package admin
 
 import (
-	"fisco/config"
 	"fisco/service/admin"
 	"fisco/utils/response"
 	"strconv"
@@ -22,9 +21,9 @@ func AddRole(ctx *gin.Context) {
 	role, err := admin.AddRole(roleIDNum, roleName)
 	if err != nil {
 		response.GeneralFail(ctx, nil, err.Error())
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 	} else {
 		response.Success(ctx, *role, "新增用户种类成功")
-		config.Logger.Info("新增用户种类成功")
+		//config.Logger.Info("新增用户种类成功")
 	}
 }

@@ -1,7 +1,6 @@
 package common
 
 import (
-	"fisco/config"
 	"fisco/service/common"
 	"fisco/utils/response"
 
@@ -20,9 +19,9 @@ func Login(ctx *gin.Context) {
 	sessionID, err := common.Login(ctx, username, password)
 	if err != nil {
 		response.DataBaseFail(ctx, nil, err.Error())
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 	} else {
 		response.Success(ctx, gin.H{"sessionID": sessionID}, "登录成功")
-		config.Logger.Info("登录成功")
+		//config.Logger.Info("登录成功")
 	}
 }

@@ -20,10 +20,10 @@ func ThumbDownData(ctx *gin.Context) {
 	session, _ := config.Store.Get(ctx.Request, "sessionID")
 	err := generaluser.ThumbDownData(session, dataName, dataContent)
 	if err != nil {
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 		response.GeneralFail(ctx, nil, err.Error())
 	} else {
-		config.Logger.Info("点灭成功")
+		//config.Logger.Info("点灭成功")
 		response.Success(ctx, nil, "点灭成功")
 	}
 }

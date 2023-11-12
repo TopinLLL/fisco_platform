@@ -417,3 +417,11 @@
 [fisco_bcos]2023/04/18 - 15:14:44.478	[34minfo[0m	D:/Code/GoCode/fisco/api/datauser/provide.go:25	数据提供成功
 [fisco_bcos]2023/04/18 - 15:14:57.213	[34minfo[0m	D:/Code/GoCode/fisco/api/datauser/provide.go:25	数据提供成功
 [fisco_bcos]2023/04/18 - 15:15:03.739	[34minfo[0m	D:/Code/GoCode/fisco/api/datauser/provide.go:25	数据提供成功
+[fisco_bcos]2023/04/18 - 15:20:04.815	[34minfo[0m	D:/Code/GoCode/fisco/api/common/login.go:26	登录成功
+[fisco_bcos]2023/04/18 - 15:20:07.027	[34minfo[0m	D:/Code/GoCode/fisco/api/datauser/provide.go:25	数据提供成功
+[fisco_bcos]2023/04/18 - 15:20:23.779	[34minfo[0m	D:/Code/GoCode/fisco/api/datauser/delete.go:25	数据删除成功
+[fisco_bcos]2023/04/18 - 15:20:35.472	[34minfo[0m	D:/Code/GoCode/fisco/api/common/login.go:26	登录成功
+[fisco_bcos]2023/11/11 - 14:23:55.318	[34minfo[0m	D:/Code/GoCode/fisco/api/chain/chain_height.go:16	请求了区块高度
+[blockchain_platform]2023/11/11 - 14:28:07	[34minfo[0m	D:/Code/GoCode/fisco/api/chain/chain_height.go:16	请求了区块高度
+[blockchain_platform]2023/11/11 - 14:29:18	[34minfo[0m	D:/Code/GoCode/fisco/api/chain/chain_height.go:16	请求了区块高度
+[blockchain_platform]2023/11/11 - 14:29:33	[34minfo[0m	D:/Code/GoCode/fisco/api/chain/chain_height.go:16	请求了区块高度

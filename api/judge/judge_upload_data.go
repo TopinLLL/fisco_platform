@@ -1,7 +1,6 @@
 package judge
 
 import (
-	"fisco/config"
 	"fisco/service/judge"
 	"fisco/utils/response"
 	"strconv"
@@ -20,12 +19,12 @@ func JudgeUploadData(ctx *gin.Context) {
 	agreeBool, _ := strconv.ParseBool(agree)
 	dataID := ctx.PostForm("data_id")
 	dataIDNum, _ := strconv.Atoi(dataID)
-	err := judge.JudgeUploadData(agreeBool, dataIDNum)
+	err := judge.UploadData(agreeBool, dataIDNum)
 	if err != nil {
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 		response.GeneralFail(ctx, nil, err.Error())
 	} else {
-		config.Logger.Info("审计数据成功")
+		//config.Logger.Info("审计数据成功")
 		response.Success(ctx, nil, "审计数据成功")
 	}
 }

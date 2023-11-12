@@ -39,6 +39,62 @@ const docTemplate = `{
                 "responses": {}
             }
         },
+        "/blockchain/contract/deploy": {
+            "get": {
+                "tags": [
+                    "链上操作"
+                ],
+                "summary": "部署智能合约",
+                "responses": {}
+            }
+        },
+        "/blockchain/contract/get": {
+            "get": {
+                "tags": [
+                    "链上操作"
+                ],
+                "summary": "获取链上数据",
+                "responses": {}
+            }
+        },
+        "/blockchain/contract/set": {
+            "post": {
+                "tags": [
+                    "链上操作"
+                ],
+                "summary": "传输数据至链上",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "交易发送方",
+                        "name": "from",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "交易接收方",
+                        "name": "to",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "交易金额",
+                        "name": "money",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/blockchain/height": {
+            "get": {
+                "tags": [
+                    "链上操作"
+                ],
+                "summary": "获取区块链高度",
+                "responses": {}
+            }
+        },
         "/data/delete": {
             "post": {
                 "tags": [
@@ -287,7 +343,7 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "localhost:9091",
 	BasePath:         "/",
 	Schemes:          []string{},
-	Title:            "fisco_bcos",
+	Title:            "区块链数据可修改实验平台",
 	Description:      "",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,

@@ -2,7 +2,7 @@ basePath: /
 host: localhost:9091
 info:
   contact: {}
-  title: fisco_bcos
+  title: 区块链数据可修改实验平台
 paths:
   /add/role:
     post:
@@ -19,6 +19,43 @@ paths:
       summary: 添加用户
       tags:
       - 管理员操作
+  /blockchain/contract/deploy:
+    get:
+      responses: {}
+      summary: 部署智能合约
+      tags:
+      - 链上操作
+  /blockchain/contract/get:
+    get:
+      responses: {}
+      summary: 获取链上数据
+      tags:
+      - 链上操作
+  /blockchain/contract/set:
+    post:
+      parameters:
+      - description: 交易发送方
+        in: formData
+        name: from
+        type: string
+      - description: 交易接收方
+        in: formData
+        name: to
+        type: string
+      - description: 交易金额
+        in: formData
+        name: money
+        type: string
+      responses: {}
+      summary: 传输数据至链上
+      tags:
+      - 链上操作
+  /blockchain/height:
+    get:
+      responses: {}
+      summary: 获取区块链高度
+      tags:
+      - 链上操作
   /data/delete:
     post:
       parameters:

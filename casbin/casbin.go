@@ -1,7 +1,6 @@
 package casbin
 
 import (
-	"fisco/config"
 	"fisco/load"
 	"fmt"
 
@@ -22,10 +21,10 @@ func init() {
 		load.VP.GetString("mysql.port"))
 	A, err := gormadapter.NewAdapter("mysql", dsn)
 	if err != nil {
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 	}
 	E, err = casbin.NewEnforcer("casbin/model/user_model.conf", A)
 	if err != nil {
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 	}
 }

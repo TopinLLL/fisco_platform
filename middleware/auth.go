@@ -24,7 +24,7 @@ type BasicAuthorizer struct {
 func (a *BasicAuthorizer) GetRoleName(c *gin.Context) interface{} {
 	session, err := config.Store.Get(c.Request, "sessionID")
 	if err != nil {
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 	}
 	role := session.Values["role"]
 	if role != nil && role != "" {
@@ -39,7 +39,7 @@ func (a *BasicAuthorizer) CheckPermission(c *gin.Context) bool {
 	path := c.Request.URL.Path
 	enforce, err := a.enforcer.Enforce(role, path, method)
 	if err != nil {
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 	}
 	return enforce
 }

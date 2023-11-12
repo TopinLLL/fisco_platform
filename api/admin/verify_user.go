@@ -1,7 +1,6 @@
 package admin
 
 import (
-	"fisco/config"
 	"fisco/service/admin"
 	"fisco/utils/response"
 	"strconv"
@@ -26,9 +25,9 @@ func VerifyUser(ctx *gin.Context) {
 	user, err := admin.VerifyUser(UserIDNum, okBool)
 	if err != nil {
 		response.GeneralFail(ctx, nil, err.Error())
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 	} else {
 		response.Success(ctx, *user, "已审批用户创建请求")
-		config.Logger.Info("已审批用户创建请求")
+		//config.Logger.Info("已审批用户创建请求")
 	}
 }

@@ -14,7 +14,7 @@ func init() {
 	Store.Options.Secure = false
 	Store.Options.HttpOnly = false
 	if err != nil {
-		Logger.Error(err.Error())
+		//Logger.Error(err.Error())
 	}
 	//defer Store.Close()
 }

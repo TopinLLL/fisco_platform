@@ -33,7 +33,8 @@ func init() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	DB.AutoMigrate(&model.Role{},
+	DB.AutoMigrate(
+		&model.Role{},
 		&model.GeneralUser{},
 		&model.ContractUser{},
 		&model.Verify{},
@@ -41,5 +42,10 @@ func init() {
 		&model.DataProvider{},
 		&model.DataConfirmed{},
 		&model.DataWatcher{},
-		&model.DataJudge{})
+		&model.DataJudge{},
+		&model.Contract{},
+		&model.Block{},
+		&model.Transaction{},
+		&model.UserProperty{},
+	)
 }

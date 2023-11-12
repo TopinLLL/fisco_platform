@@ -20,10 +20,10 @@ func ThumbUpData(ctx *gin.Context) {
 	session, _ := config.Store.Get(ctx.Request, "sessionID")
 	err := generaluser.ThumbUpData(session, dataName, dataContent)
 	if err != nil {
-		config.Logger.Error(err.Error())
+		//config.Logger.Error(err.Error())
 		response.GeneralFail(ctx, nil, err.Error())
 	} else {
-		config.Logger.Info("点赞成功")
+		//config.Logger.Info("点赞成功")
 		response.Success(ctx, nil, "点赞成功")
 	}
 }
