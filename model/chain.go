@@ -9,23 +9,39 @@ type Contract struct {
 	ContractAddress string `json:"contract_address,omitempty"` // 合约地址
 }
 
-// Block 区块信息
-type Block struct {
+// TxBlockBeforeEdit 编辑前区块信息
+type TxBlockBeforeEdit struct {
 	*gorm.Model
-	ParentHash string
-	Hash       string
-	Height     string
-	TXHash     string
+	ParentHash    string
+	ParentHashCHA string
+	Hash          string
+	HashCHA       string
+	Height        string
+	TXHash        string
+	HasEdited     bool
 }
 
-type Transaction struct {
+// TxBlockAfterEdit 编辑后区块信息
+type TxBlockAfterEdit struct {
 	*gorm.Model
-	From  string
-	Money int64
-	To    string
+	ParentHash    string
+	ParentHashCHA string
+	Hash          string
+	HashCHA       string
+	Height        string
+	TXHash        string
 }
 
-type UserProperty struct {
+type TxDealDetail struct {
+	*gorm.Model
+	From          string
+	Money         int64
+	To            string
+	TxBlockHeight string
+	TxHash        string
+}
+
+type TxUserProperty struct {
 	*gorm.Model
 	Username string
 	Property int64

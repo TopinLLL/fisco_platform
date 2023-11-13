@@ -135,3 +135,9 @@
 [fisco_bcos]2023/04/18 - 12:25:38.011	[31merror[0m	D:/Code/GoCode/fisco/casbin/casbin.go:14	dial tcp :0: connectex: The requested address is not valid in its context.
 [fisco_bcos]2023/04/18 - 12:27:34.442	[31merror[0m	D:/Code/GoCode/fisco/casbin/casbin.go:21	Error 1049 (42000): Unknown database '%!(extra string=fisco_bcos)'
 [blockchain_platform]2023/11/11 - 17:23:32	[31merror[0m	D:/Code/GoCode/fisco/api/chain/upload.go:21	parse private key failed, err: open 0x7bf0bfd054cac716ca10eaaf452f3cc02283a2ef.pem: The system cannot find the file specified.
+[blockchain_platform]2023/11/13 - 14:51:38	[31mfatal[0m	D:/Code/GoCode/fisco/api/chain/transaction.go:92	Error 1146 (42S02): Table 'fisco_bcos.block_before_cha' doesn't exist
+[blockchain_platform]2023/11/13 - 14:54:34	[31mfatal[0m	D:/Code/GoCode/fisco/api/chain/transaction.go:104	Error 1146 (42S02): Table 'fisco_bcos.user_property' doesn't exist
+[blockchain_platform]2023/11/13 - 15:28:54	[31mfatal[0m	D:/Code/GoCode/fisco/api/chain/transaction.go:97	Error 1366 (HY000): Incorrect string value: '\xAF\xD3\xDDca...' for column 'parent_hash' at row 1
+[blockchain_platform]2023/11/13 - 15:31:46	[31mfatal[0m	D:/Code/GoCode/fisco/api/chain/transaction.go:98	Error 1366 (HY000): Incorrect string value: '\xAF\x85\x87`f...' for column 'parent_hash' at row 1
+[blockchain_platform]2023/11/13 - 20:34:27	[31merror[0m	D:/Code/GoCode/fisco/api/chain/transaction.go:143	WHERE conditions required
+[blockchain_platform]2023/11/13 - 20:34:53	[31merror[0m	D:/Code/GoCode/fisco/api/chain/transaction.go:143	WHERE conditions required

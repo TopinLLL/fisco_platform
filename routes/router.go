@@ -23,9 +23,9 @@ func NewRouter() (r *gin.Engine) {
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	r.POST("/login", common.Login)
 	r.GET("/blockchain/height", chain.GetChainHeight)
-	r.GET("/blockchain/contract/deploy", chain.DeploySmartContract)
-	r.POST("/blockchain/contract/set", chain.SetTransaction)
-	r.GET("/blockchain/contract/get", chain.GetDataFromBlockChain)
+	r.POST("/blockchain/contract/deploy", chain.DeploySmartContract)
+	r.POST("/blockchain/contract/singletx", chain.SingleTx)
+	r.POST("/blockchain/contract/edittx", chain.EditTX)
 
 	//使用权限验证中间件
 	//r.Use(middleware.NewAuthorizer(casbin.E))

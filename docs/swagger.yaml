@@ -20,18 +20,31 @@ paths:
       tags:
       - 管理员操作
   /blockchain/contract/deploy:
-    get:
+    post:
       responses: {}
       summary: 部署智能合约
       tags:
       - 链上操作
-  /blockchain/contract/get:
-    get:
+  /blockchain/contract/edittx:
+    post:
+      parameters:
+      - description: 用户私钥
+        in: formData
+        name: privateKey
+        type: string
+      - description: 交易地址
+        in: formData
+        name: txHash
+        type: string
+      - description: 编辑后的数据
+        in: formData
+        name: data
+        type: string
       responses: {}
-      summary: 获取链上数据
+      summary: 编辑交易
       tags:
       - 链上操作
-  /blockchain/contract/set:
+  /blockchain/contract/singletx:
     post:
       parameters:
       - description: 交易发送方
@@ -47,7 +60,7 @@ paths:
         name: money
         type: string
       responses: {}
-      summary: 传输数据至链上
+      summary: 进行单笔交易
       tags:
       - 链上操作
   /blockchain/height:

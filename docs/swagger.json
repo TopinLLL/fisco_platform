@@ -31,7 +31,7 @@
             }
         },
         "/blockchain/contract/deploy": {
-            "get": {
+            "post": {
                 "tags": [
                     "链上操作"
                 ],
@@ -39,21 +39,41 @@
                 "responses": {}
             }
         },
-        "/blockchain/contract/get": {
-            "get": {
-                "tags": [
-                    "链上操作"
-                ],
-                "summary": "获取链上数据",
-                "responses": {}
-            }
-        },
-        "/blockchain/contract/set": {
+        "/blockchain/contract/edittx": {
             "post": {
                 "tags": [
                     "链上操作"
                 ],
-                "summary": "传输数据至链上",
+                "summary": "编辑交易",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户私钥",
+                        "name": "privateKey",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "交易地址",
+                        "name": "txHash",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "编辑后的数据",
+                        "name": "data",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/blockchain/contract/singletx": {
+            "post": {
+                "tags": [
+                    "链上操作"
+                ],
+                "summary": "进行单笔交易",
                 "parameters": [
                     {
                         "type": "string",

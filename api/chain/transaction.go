@@ -15,13 +15,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-const userPrivateKey = "8632da3eb3256b7f7008fb66a640150d9c1604d96166c9f64fd6477b2fef740f"
-const smartContractAddress = "0xC8D6dF8522d2dd192c50514274a46E95E24104a7"
+const (
+	userPrivateKey       = "8632da3eb3256b7f7008fb66a640150d9c1604d96166c9f64fd6477b2fef740f"
+	smartContractAddress = "0xC8D6dF8522d2dd192c50514274a46E95E24104a7"
+)
+
+var contractAddress common.Address
 
 // DeploySmartContract
 // @Summary      部署智能合约
 // @Tags         链上操作
-// @Router       /blockchain/contract/deploy [get]
+// @Router       /blockchain/contract/deploy [post]
 func DeploySmartContract(ctx *gin.Context) {
 	client, err := initSmartContractClient()
 	if err != nil {
@@ -44,14 +48,14 @@ func DeploySmartContract(ctx *gin.Context) {
 	}
 }
 
-// SetTransaction
-// @Summary      进行交易
+// SingleTx
+// @Summary      进行单笔交易
 // @Tags         链上操作
-// @Param		  from formData  string  yes "交易发送方"
-// @Param		  to formData  string  yes "交易接收方"
-// @Param		  money formData  string  yes "交易金额"
-// @Router       /blockchain/contract/set [post]
-func SetTransaction(ctx *gin.Context) {
+// @Param		 from formData  string  yes "交易发送方"
+// @Param		 to formData  string  yes "交易接收方"
+// @Param		 money formData  string  yes "交易金额"
+// @Router       /blockchain/contract/singletx [post]
+func SingleTx(ctx *gin.Context) {
 	from := ctx.PostForm("from")
 	to := ctx.PostForm("to")
 	moneyStr := ctx.PostForm("money")
@@ -84,28 +88,40 @@ func SetTransaction(ctx *gin.Context) {
 	// 区块信息存入数据库
 	hash := common.HexToHash(receipt.BlockHash)
 	blockInfo, _ := c.GetBlockByHash(ctx, hash, false)
-	if err := store.BlockInfo(blockInfo.ParentHash, blockInfo.Hash, tx.Hash().String(), blockInfo.Number); err != nil {
+	// 存储编辑前区块信息,区块信息初次进行变色龙哈希
+	if err := store.BlockInfoBeforeEdit(blockInfo, userPrivateKey, tx.Hash().String(), moneyStr); err != nil {
 		config.Logger.Fatal(err.Error())
 		return
 	}
 
 	// 交易信息存入数据库
-	if err := store.Transaction(from, to, int64(money)); err != nil {
+	if err := store.Transaction(from, to, int64(money), blockInfo.Number, tx.Hash().String()); err != nil {
 		config.Logger.Fatal(err.Error())
 		return
 	}
+
+	// 用户资产信息存入数据库
 	if err := store.UserProperty(from, to, int64(money)); err != nil {
 		config.Logger.Fatal(err.Error())
 		return
 	}
 }
 
-// GetDataFromBlockChain
-// @Summary      获取链上数据
+// EditTX
+// @Summary      编辑交易
 // @Tags         链上操作
-// @Router       /blockchain/contract/get [get]
-func GetDataFromBlockChain(ctx *gin.Context) {
-
+// @Param		 privateKey formData  string  yes "用户私钥"
+// @Param		 txHash formData  string  yes "交易地址"
+// @Param		 data formData  string  yes "编辑后的数据"
+// @Router       /blockchain/contract/edittx [post]
+func EditTX(ctx *gin.Context) {
+	privateKey := ctx.PostForm("privateKey")
+	txHash := ctx.PostForm("txHash")
+	data := ctx.PostForm("data")
+	if err := store.EditTX(privateKey, txHash, data); err != nil {
+		config.Logger.Fatal(err.Error())
+		return
+	}
 }
 
 func initSmartContractClient() (*client.Client, error) {
