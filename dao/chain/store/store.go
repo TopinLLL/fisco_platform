@@ -1,6 +1,7 @@
 package store
 
 import (
+	"encoding/json"
 	"fisco/chameleon"
 	"fisco/config"
 	"fisco/model"
@@ -21,9 +22,16 @@ func SmartContract(name string, address string) error {
 }
 
 // BlockInfoBeforeEdit 存储编辑前区块信息
-func BlockInfoBeforeEdit(blockInfo *types.Block, privateKey, txHash string, data string) error {
-	parentHash := chameleon.Chameleon(fmt.Sprintf("%s%s", blockInfo.ParentHash, privateKey), data)
-	hash := chameleon.Chameleon(fmt.Sprintf("%s%s", blockInfo.Hash, privateKey), data)
+func BlockInfoBeforeEdit(blockInfo *types.Block, privateKey, txHash string, from, to, data string) error {
+	money, _ := strconv.Atoi(data)
+	detail := &model.Detail{
+		From:  from,
+		To:    to,
+		Money: int64(money),
+	}
+	detailStr, _ := json.Marshal(detail)
+	parentHash := chameleon.Seal(fmt.Sprintf("%s%s", blockInfo.ParentHash, privateKey), string(detailStr))
+	hash := chameleon.Seal(fmt.Sprintf("%s%s", blockInfo.Hash, privateKey), string(detailStr))
 
 	block := &model.TxBlockBeforeEdit{
 		ParentHash:    parentHash,
@@ -38,12 +46,19 @@ func BlockInfoBeforeEdit(blockInfo *types.Block, privateKey, txHash string, data
 
 // Transaction 存储交易信息
 func Transaction(from, to string, money int64, txBlockHeight string, txHash string) error {
+	detail := &model.Detail{
+		From:  from,
+		To:    to,
+		Money: money,
+	}
+	detailStr, _ := json.Marshal(detail)
 	tx := &model.TxDealDetail{
 		From:          from,
 		Money:         money,
 		To:            to,
 		TxBlockHeight: txBlockHeight,
 		TxHash:        txHash,
+		Detail:        string(detailStr),
 	}
 
 	return config.DB.Model(&model.TxDealDetail{}).Create(tx).Error
@@ -83,8 +98,8 @@ func EditTX(privateKey string, txHash string, data string) error {
 		Height:        blockBeforeEdit.Height,
 		TXHash:        blockBeforeEdit.TXHash,
 	}
-	blockAfterEdit.Hash = chameleon.Chameleon(fmt.Sprintf("%s%s", blockBeforeEdit.Hash, privateKey), data)
-	blockAfterEdit.HashCHA = chameleon.Chameleon(privateKey, data)[:20]
+	blockAfterEdit.Hash = chameleon.Seal(fmt.Sprintf("%s%s", blockBeforeEdit.Hash, privateKey), data)
+	blockAfterEdit.HashCHA = chameleon.Seal(privateKey, data)[:20]
 
 	if !blockBeforeEdit.HasEdited {
 		if err := config.DB.Model(&model.TxBlockBeforeEdit{}).Where("tx_hash=?", txHash).Update("has_edited", true).Error; err != nil {
@@ -117,7 +132,13 @@ func editTXDetail(txHash, data string) error {
 	}
 
 	editMoney, _ := strconv.Atoi(data)
-	if err := config.DB.Model(&model.TxDealDetail{}).Where("tx_hash=?", txHash).Update("money", int64(editMoney)).Error; err != nil {
+	editDetail := &model.Detail{
+		From:  dealDetail.From,
+		To:    dealDetail.To,
+		Money: int64(editMoney),
+	}
+	editDetailStr, _ := json.Marshal(editDetail)
+	if err := config.DB.Model(&model.TxDealDetail{}).Where("tx_hash=?", txHash).Updates(map[string]interface{}{"money": int64(editMoney), "detail": editDetailStr}).Error; err != nil {
 		config.Logger.Error(err.Error())
 		return err
 	}
@@ -157,4 +178,16 @@ func editUserProperty(txHash, data string) error {
 		return err
 	}
 	return nil
+}
+
+// TraceTX 追溯交易
+func TraceTX(txHash string) (*model.Detail, error) {
+	detail := &model.TxDealDetail{}
+	if err := config.DB.Model(&model.TxDealDetail{}).Where("tx_hash=?", txHash).Find(detail).Error; err != nil {
+		return nil, err
+	}
+
+	detailObj := &model.Detail{}
+	json.Unmarshal([]byte(detail.Detail), detailObj)
+	return detailObj, nil
 }

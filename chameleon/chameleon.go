@@ -6,7 +6,7 @@ import (
 	"golang.org/x/crypto/chacha20poly1305"
 )
 
-func Chameleon(privateKey string, data string) string {
+func Seal(privateKey string, data string) string {
 	// size必须为32
 	key := readSecretKey(chacha20poly1305.KeySize)
 	c, _ := chacha20poly1305.New(key)

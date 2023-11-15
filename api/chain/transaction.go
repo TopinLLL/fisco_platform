@@ -68,7 +68,7 @@ func SingleTx(ctx *gin.Context) {
 	}
 
 	// 加载智能合约
-	contractAddress := common.HexToAddress(smartContractAddress) // deploy contract to get address
+	contractAddress := common.HexToAddress(smartContractAddress)
 	instance, err := kvtabletest.NewKVTableTest(contractAddress, c)
 	if err != nil {
 		config.Logger.Fatal(err.Error())
@@ -89,7 +89,7 @@ func SingleTx(ctx *gin.Context) {
 	hash := common.HexToHash(receipt.BlockHash)
 	blockInfo, _ := c.GetBlockByHash(ctx, hash, false)
 	// 存储编辑前区块信息,区块信息初次进行变色龙哈希
-	if err := store.BlockInfoBeforeEdit(blockInfo, userPrivateKey, tx.Hash().String(), moneyStr); err != nil {
+	if err := store.BlockInfoBeforeEdit(blockInfo, userPrivateKey, tx.Hash().String(), from, to, moneyStr); err != nil {
 		config.Logger.Fatal(err.Error())
 		return
 	}

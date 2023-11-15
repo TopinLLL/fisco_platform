@@ -39,10 +39,17 @@ type TxDealDetail struct {
 	To            string
 	TxBlockHeight string
 	TxHash        string
+	Detail        string
 }
 
 type TxUserProperty struct {
 	*gorm.Model
 	Username string
 	Property int64
+}
+
+type Detail struct {
+	From  string
+	To    string
+	Money int64
 }

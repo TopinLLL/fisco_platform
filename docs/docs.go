@@ -106,6 +106,29 @@ const docTemplate = `{
                 "responses": {}
             }
         },
+        "/blockchain/contract/tracetx": {
+            "post": {
+                "tags": [
+                    "监管者操作"
+                ],
+                "summary": "追溯交易",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "监管者私钥",
+                        "name": "privateKey",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "交易地址",
+                        "name": "txHash",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
         "/blockchain/height": {
             "get": {
                 "tags": [

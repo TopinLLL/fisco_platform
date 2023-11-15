@@ -26,6 +26,7 @@ func NewRouter() (r *gin.Engine) {
 	r.POST("/blockchain/contract/deploy", chain.DeploySmartContract)
 	r.POST("/blockchain/contract/singletx", chain.SingleTx)
 	r.POST("/blockchain/contract/edittx", chain.EditTX)
+	r.POST("/blockchain/contract/tracetx", chain.TraceTX)
 
 	//使用权限验证中间件
 	//r.Use(middleware.NewAuthorizer(casbin.E))

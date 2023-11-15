@@ -63,6 +63,21 @@ paths:
       summary: 进行单笔交易
       tags:
       - 链上操作
+  /blockchain/contract/tracetx:
+    post:
+      parameters:
+      - description: 监管者私钥
+        in: formData
+        name: privateKey
+        type: string
+      - description: 交易地址
+        in: formData
+        name: txHash
+        type: string
+      responses: {}
+      summary: 追溯交易
+      tags:
+      - 监管者操作
   /blockchain/height:
     get:
       responses: {}
