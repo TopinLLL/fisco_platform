@@ -7,8 +7,8 @@ import (
 	"fisco/api/contractuser"
 	"fisco/api/datauser"
 	"fisco/api/generaluser"
-	"fisco/api/judge"
 	"fisco/api/system"
+	"fisco/api/test"
 	"fisco/docs"
 
 	"github.com/gin-gonic/gin"
@@ -27,6 +27,7 @@ func NewRouter() (r *gin.Engine) {
 	r.POST("/blockchain/contract/singletx", chain.SingleTx)
 	r.POST("/blockchain/contract/edittx", chain.EditTX)
 	r.POST("/blockchain/contract/tracetx", chain.TraceTX)
+	r.POST("/privacy/open", common.PrivacyProtect)
 
 	//使用权限验证中间件
 	//r.Use(middleware.NewAuthorizer(casbin.E))
@@ -40,6 +41,10 @@ func NewRouter() (r *gin.Engine) {
 	r.POST("/data/thumbup", generaluser.ThumbUpData)
 	r.POST("/data/thumbdown", generaluser.ThumbDownData)
 	r.POST("/system/aggregate", system.AggregateToRedis)
-	r.POST("/data/jugde", judge.JudgeUploadData)
+	r.POST("/test/amend", test.Amend)
+	r.POST("/test/amendattack", test.AmendAttack)
+	r.POST("/test/privacy", test.Privacy)
+	r.POST("/test/privacydoor", test.PrivacyDoor)
+
 	return
 }

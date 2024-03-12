@@ -10,10 +10,10 @@ import (
 )
 
 // AggregateToRedis
-// @Summary     系统聚合数据
-// @Tags         系统操作
+// @Summary     聚合密钥
+// @Tags         隐私保护模块
 // @Param start formData boolean yes "是否开启聚合"
-// @Router       /system/aggregate [post]
+// @Router       /privacy/aggregate [post]
 func AggregateToRedis(ctx *gin.Context) {
 	start := ctx.PostForm("start")
 	startBool, _ := strconv.ParseBool(start)

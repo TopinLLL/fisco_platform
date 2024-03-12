@@ -9,10 +9,10 @@ import (
 )
 
 // Verify
-// @Summary      智能合约用户确认邮件
-// @Tags         智能合约用户操作
+// @Summary      确认智能合约
+// @Tags         管理员操作
 // @Param		  verify_email formData  string  yes "验证邮件"
-// @Router       /verify/email [post]
+// @Router       /verify/smartcontract [post]
 func Verify(ctx *gin.Context) {
 	session, _ := config.Store.Get(ctx.Request, "sessionID")
 	username := session.Values["username"]

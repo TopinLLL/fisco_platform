@@ -9,11 +9,11 @@ import (
 )
 
 // TraceTX
-// @Summary      追溯交易
-// @Tags         监管者操作
+// @Summary      追溯修正操作
+// @Tags         电子合同通信与修正模块
 // @Param		 privateKey formData  string  yes "监管者私钥"
 // @Param		 txHash formData  string  yes "交易地址"
-// @Router       /blockchain/contract/tracetx [post]
+// @Router       /amend/contract/tracetx [post]
 func TraceTX(ctx *gin.Context) {
 	txHash := ctx.PostForm("txHash")
 	detail, err := store.TraceTX(txHash)

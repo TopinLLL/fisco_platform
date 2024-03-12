@@ -8,8 +8,8 @@ import (
 )
 
 // Login
-// @Summary      用户登录
-// @Tags         登录
+// @Summary      登录
+// @Tags         用户操作
 // @Param		  username formData  string  yes "账号"
 // @Param		  password formData  string  yes "密码"
 // @Router       /login [post]

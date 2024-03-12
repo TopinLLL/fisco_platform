@@ -7,10 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// ShowHotData
-// @Summary     数据浏览用户查看热点数据
-// @Tags         数据浏览用户操作
-// @Router       /show/hot [get]
 func ShowHotData(ctx *gin.Context) {
 	results, err := generaluser.ShowHotData()
 	if err != nil {

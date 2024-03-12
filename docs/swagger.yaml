@@ -2,7 +2,7 @@ basePath: /
 host: localhost:9091
 info:
   contact: {}
-  title: 区块链数据可修改实验平台
+  title: 面向电子合同的可修正区块链系统
 paths:
   /add/role:
     post:
@@ -19,13 +19,22 @@ paths:
       summary: 添加用户
       tags:
       - 管理员操作
-  /blockchain/contract/deploy:
+  /amend/calculate:
     post:
+      parameters:
+      - description: 数据ID
+        in: formData
+        name: data_id
+        type: string
+      - description: 该数据是否合法
+        in: formData
+        name: agree
+        type: boolean
       responses: {}
-      summary: 部署智能合约
+      summary: 计算信誉值
       tags:
-      - 链上操作
-  /blockchain/contract/edittx:
+      - 电子合同通信与修正模块
+  /amend/contract/edittx:
     post:
       parameters:
       - description: 用户私钥
@@ -41,10 +50,10 @@ paths:
         name: data
         type: string
       responses: {}
-      summary: 编辑交易
+      summary: 请求修正电子合同
       tags:
-      - 链上操作
-  /blockchain/contract/singletx:
+      - 电子合同通信与修正模块
+  /amend/contract/singletx:
     post:
       parameters:
       - description: 交易发送方
@@ -60,10 +69,10 @@ paths:
         name: money
         type: string
       responses: {}
-      summary: 进行单笔交易
+      summary: 上传电子合同
       tags:
-      - 链上操作
-  /blockchain/contract/tracetx:
+      - 电子合同通信与修正模块
+  /amend/contract/tracetx:
     post:
       parameters:
       - description: 监管者私钥
@@ -75,31 +84,10 @@ paths:
         name: txHash
         type: string
       responses: {}
-      summary: 追溯交易
+      summary: 追溯修正操作
       tags:
-      - 监管者操作
-  /blockchain/height:
-    get:
-      responses: {}
-      summary: 获取区块链高度
-      tags:
-      - 链上操作
-  /data/delete:
-    post:
-      parameters:
-      - description: 数据名称
-        in: formData
-        name: data_name
-        type: string
-      - description: 数据内容
-        in: formData
-        name: data_content
-        type: string
-      responses: {}
-      summary: 数据提供用户删除数据
-      tags:
-      - 数据提供用户操作
-  /data/jugde:
+      - 电子合同通信与修正模块
+  /amend/eliminate:
     post:
       parameters:
       - description: 数据ID
@@ -111,54 +99,21 @@ paths:
         name: agree
         type: boolean
       responses: {}
-      summary: 审计数据同步至主平台
+      summary: 淘汰低信誉用户
       tags:
-      - 审计用户操作
-  /data/provide:
+      - 电子合同通信与修正模块
+  /blockchain/contract/deploy:
     post:
-      parameters:
-      - description: 数据名称
-        in: formData
-        name: data_name
-        type: string
-      - description: 数据内容
-        in: formData
-        name: data_content
-        type: string
       responses: {}
-      summary: 数据提供用户提供数据
+      summary: 部署智能合约
       tags:
-      - 数据提供用户操作
-  /data/thumbdown:
-    post:
-      parameters:
-      - description: 数据名称
-        in: formData
-        name: data_name
-        type: string
-      - description: 数据内容
-        in: formData
-        name: data_content
-        type: string
+      - 用户操作
+  /blockchain/height:
+    get:
       responses: {}
-      summary: 数据浏览用户点灭数据
+      summary: 获取区块链高度
       tags:
-      - 数据浏览用户操作
-  /data/thumbup:
-    post:
-      parameters:
-      - description: 数据名称
-        in: formData
-        name: data_name
-        type: string
-      - description: 数据内容
-        in: formData
-        name: data_content
-        type: string
-      responses: {}
-      summary: 数据浏览用户点赞热点数据
-      tags:
-      - 数据浏览用户操作
+      - 管理员操作
   /login:
     post:
       parameters:
@@ -171,9 +126,75 @@ paths:
         name: password
         type: string
       responses: {}
-      summary: 用户登录
+      summary: 登录
       tags:
-      - 登录
+      - 用户操作
+  /privacy/aggregate:
+    post:
+      parameters:
+      - description: 是否开启聚合
+        in: formData
+        name: start
+        type: boolean
+      responses: {}
+      summary: 聚合密钥
+      tags:
+      - 隐私保护模块
+  /privacy/groupcreate:
+    post:
+      parameters:
+      - description: 用户签名
+        in: formData
+        name: signature
+        type: string
+      responses: {}
+      summary: 群创建
+      tags:
+      - 隐私保护模块
+  /privacy/groupjoin:
+    post:
+      parameters:
+      - description: 用户签名
+        in: formData
+        name: signature
+        type: string
+      responses: {}
+      summary: 群加入
+      tags:
+      - 隐私保护模块
+  /privacy/open:
+    post:
+      parameters:
+      - description: 用户签名
+        in: formData
+        name: signature
+        type: string
+      responses: {}
+      summary: 群签名打开
+      tags:
+      - 隐私保护模块
+  /privacy/sign:
+    post:
+      parameters:
+      - description: 用户签名
+        in: formData
+        name: signature
+        type: string
+      responses: {}
+      summary: 电子合同签名
+      tags:
+      - 隐私保护模块
+  /privacy/verify:
+    post:
+      parameters:
+      - description: 用户签名
+        in: formData
+        name: signature
+        type: string
+      responses: {}
+      summary: 群签名验证
+      tags:
+      - 隐私保护模块
   /register:
     post:
       parameters:
@@ -196,25 +217,32 @@ paths:
       responses: {}
       summary: 用户注册
       tags:
-      - 常规用户操作
-  /show/hot:
-    get:
-      responses: {}
-      summary: 数据浏览用户查看热点数据
-      tags:
-      - 数据浏览用户操作
-  /system/aggregate:
+      - 用户操作
+  /test/amend:
     post:
-      parameters:
-      - description: 是否开启聚合
-        in: formData
-        name: start
-        type: boolean
       responses: {}
-      summary: 系统聚合数据
+      summary: 可修正
       tags:
-      - 系统操作
-  /verify/email:
+      - 实验
+  /test/amendattack:
+    post:
+      responses: {}
+      summary: 可修正作恶节点
+      tags:
+      - 实验
+  /test/privacy:
+    post:
+      responses: {}
+      summary: 群签名
+      tags:
+      - 实验
+  /test/privacydoor:
+    post:
+      responses: {}
+      summary: 不同实验群签名
+      tags:
+      - 实验
+  /verify/smartcontract:
     post:
       parameters:
       - description: 验证邮件
@@ -222,9 +250,9 @@ paths:
         name: verify_email
         type: string
       responses: {}
-      summary: 智能合约用户确认邮件
+      summary: 确认智能合约
       tags:
-      - 智能合约用户操作
+      - 管理员操作
   /verify/user:
     post:
       parameters:

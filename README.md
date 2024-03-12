@@ -14,4 +14,16 @@ http://localhost:9091/swagger/index.html
 
 账户：admin
 
-密码：gzl990816
+密码：Gzl990816
+
+
+
+### git协同开发
+
+请在commit时进行完整备注，例如[fix] 修改某功能,--story==2172204202311152055
+
+代表2172204学号的同学在2023年11月15日的20点55分进行了修改，便于出现问题时相关同学进行修正
+
+请在develop或hotfix分支进行开发或修改，使用git merge合并到master分支
+
+请慎用回滚功能

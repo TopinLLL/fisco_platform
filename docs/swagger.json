@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "区块链数据可修改实验平台",
+        "title": "面向电子合同的可修正区块链系统",
         "contact": {}
     },
     "host": "localhost:9091",
@@ -30,21 +30,35 @@
                 "responses": {}
             }
         },
-        "/blockchain/contract/deploy": {
+        "/amend/calculate": {
             "post": {
                 "tags": [
-                    "链上操作"
+                    "电子合同通信与修正模块"
                 ],
-                "summary": "部署智能合约",
+                "summary": "计算信誉值",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "数据ID",
+                        "name": "data_id",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "该数据是否合法",
+                        "name": "agree",
+                        "in": "formData"
+                    }
+                ],
                 "responses": {}
             }
         },
-        "/blockchain/contract/edittx": {
+        "/amend/contract/edittx": {
             "post": {
                 "tags": [
-                    "链上操作"
+                    "电子合同通信与修正模块"
                 ],
-                "summary": "编辑交易",
+                "summary": "请求修正电子合同",
                 "parameters": [
                     {
                         "type": "string",
@@ -68,12 +82,12 @@
                 "responses": {}
             }
         },
-        "/blockchain/contract/singletx": {
+        "/amend/contract/singletx": {
             "post": {
                 "tags": [
-                    "链上操作"
+                    "电子合同通信与修正模块"
                 ],
-                "summary": "进行单笔交易",
+                "summary": "上传电子合同",
                 "parameters": [
                     {
                         "type": "string",
@@ -97,12 +111,12 @@
                 "responses": {}
             }
         },
-        "/blockchain/contract/tracetx": {
+        "/amend/contract/tracetx": {
             "post": {
                 "tags": [
-                    "监管者操作"
+                    "电子合同通信与修正模块"
                 ],
-                "summary": "追溯交易",
+                "summary": "追溯修正操作",
                 "parameters": [
                     {
                         "type": "string",
@@ -120,44 +134,12 @@
                 "responses": {}
             }
         },
-        "/blockchain/height": {
-            "get": {
-                "tags": [
-                    "链上操作"
-                ],
-                "summary": "获取区块链高度",
-                "responses": {}
-            }
-        },
-        "/data/delete": {
+        "/amend/eliminate": {
             "post": {
                 "tags": [
-                    "数据提供用户操作"
+                    "电子合同通信与修正模块"
                 ],
-                "summary": "数据提供用户删除数据",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "数据名称",
-                        "name": "data_name",
-                        "in": "formData"
-                    },
-                    {
-                        "type": "string",
-                        "description": "数据内容",
-                        "name": "data_content",
-                        "in": "formData"
-                    }
-                ],
-                "responses": {}
-            }
-        },
-        "/data/jugde": {
-            "post": {
-                "tags": [
-                    "审计用户操作"
-                ],
-                "summary": "审计数据同步至主平台",
+                "summary": "淘汰低信誉用户",
                 "parameters": [
                     {
                         "type": "string",
@@ -175,81 +157,30 @@
                 "responses": {}
             }
         },
-        "/data/provide": {
+        "/blockchain/contract/deploy": {
             "post": {
                 "tags": [
-                    "数据提供用户操作"
+                    "用户操作"
                 ],
-                "summary": "数据提供用户提供数据",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "数据名称",
-                        "name": "data_name",
-                        "in": "formData"
-                    },
-                    {
-                        "type": "string",
-                        "description": "数据内容",
-                        "name": "data_content",
-                        "in": "formData"
-                    }
-                ],
+                "summary": "部署智能合约",
                 "responses": {}
             }
         },
-        "/data/thumbdown": {
-            "post": {
+        "/blockchain/height": {
+            "get": {
                 "tags": [
-                    "数据浏览用户操作"
+                    "管理员操作"
                 ],
-                "summary": "数据浏览用户点灭数据",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "数据名称",
-                        "name": "data_name",
-                        "in": "formData"
-                    },
-                    {
-                        "type": "string",
-                        "description": "数据内容",
-                        "name": "data_content",
-                        "in": "formData"
-                    }
-                ],
-                "responses": {}
-            }
-        },
-        "/data/thumbup": {
-            "post": {
-                "tags": [
-                    "数据浏览用户操作"
-                ],
-                "summary": "数据浏览用户点赞热点数据",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "数据名称",
-                        "name": "data_name",
-                        "in": "formData"
-                    },
-                    {
-                        "type": "string",
-                        "description": "数据内容",
-                        "name": "data_content",
-                        "in": "formData"
-                    }
-                ],
+                "summary": "获取区块链高度",
                 "responses": {}
             }
         },
         "/login": {
             "post": {
                 "tags": [
-                    "登录"
+                    "用户操作"
                 ],
-                "summary": "用户登录",
+                "summary": "登录",
                 "parameters": [
                     {
                         "type": "string",
@@ -267,10 +198,112 @@
                 "responses": {}
             }
         },
+        "/privacy/aggregate": {
+            "post": {
+                "tags": [
+                    "隐私保护模块"
+                ],
+                "summary": "聚合密钥",
+                "parameters": [
+                    {
+                        "type": "boolean",
+                        "description": "是否开启聚合",
+                        "name": "start",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/privacy/groupcreate": {
+            "post": {
+                "tags": [
+                    "隐私保护模块"
+                ],
+                "summary": "群创建",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户签名",
+                        "name": "signature",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/privacy/groupjoin": {
+            "post": {
+                "tags": [
+                    "隐私保护模块"
+                ],
+                "summary": "群加入",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户签名",
+                        "name": "signature",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/privacy/open": {
+            "post": {
+                "tags": [
+                    "隐私保护模块"
+                ],
+                "summary": "群签名打开",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户签名",
+                        "name": "signature",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/privacy/sign": {
+            "post": {
+                "tags": [
+                    "隐私保护模块"
+                ],
+                "summary": "电子合同签名",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户签名",
+                        "name": "signature",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/privacy/verify": {
+            "post": {
+                "tags": [
+                    "隐私保护模块"
+                ],
+                "summary": "群签名验证",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "用户签名",
+                        "name": "signature",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
         "/register": {
             "post": {
                 "tags": [
-                    "常规用户操作"
+                    "用户操作"
                 ],
                 "summary": "用户注册",
                 "parameters": [
@@ -302,38 +335,48 @@
                 "responses": {}
             }
         },
-        "/show/hot": {
-            "get": {
+        "/test/amend": {
+            "post": {
                 "tags": [
-                    "数据浏览用户操作"
+                    "实验"
                 ],
-                "summary": "数据浏览用户查看热点数据",
+                "summary": "可修正",
                 "responses": {}
             }
         },
-        "/system/aggregate": {
+        "/test/amendattack": {
             "post": {
                 "tags": [
-                    "系统操作"
+                    "实验"
                 ],
-                "summary": "系统聚合数据",
-                "parameters": [
-                    {
-                        "type": "boolean",
-                        "description": "是否开启聚合",
-                        "name": "start",
-                        "in": "formData"
-                    }
-                ],
+                "summary": "可修正作恶节点",
                 "responses": {}
             }
         },
-        "/verify/email": {
+        "/test/privacy": {
             "post": {
                 "tags": [
-                    "智能合约用户操作"
+                    "实验"
                 ],
-                "summary": "智能合约用户确认邮件",
+                "summary": "群签名",
+                "responses": {}
+            }
+        },
+        "/test/privacydoor": {
+            "post": {
+                "tags": [
+                    "实验"
+                ],
+                "summary": "不同实验群签名",
+                "responses": {}
+            }
+        },
+        "/verify/smartcontract": {
+            "post": {
+                "tags": [
+                    "管理员操作"
+                ],
+                "summary": "确认智能合约",
                 "parameters": [
                     {
                         "type": "string",

@@ -10,7 +10,7 @@ import (
 
 // GetChainHeight
 // @Summary      获取区块链高度
-// @Tags         链上操作
+// @Tags         管理员操作
 // @Router       /blockchain/height [get]
 func GetChainHeight(ctx *gin.Context) {
 	height := strconv.Itoa(int(chain.GetChainHeight(ctx)))

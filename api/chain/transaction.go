@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"math/big"
 	"strconv"
+	"time"
 
 	"github.com/FISCO-BCOS/go-sdk/client"
 	"github.com/FISCO-BCOS/go-sdk/conf"
@@ -24,7 +25,7 @@ var contractAddress common.Address
 
 // DeploySmartContract
 // @Summary      部署智能合约
-// @Tags         链上操作
+// @Tags         用户操作
 // @Router       /blockchain/contract/deploy [post]
 func DeploySmartContract(ctx *gin.Context) {
 	client, err := initSmartContractClient()
@@ -49,12 +50,12 @@ func DeploySmartContract(ctx *gin.Context) {
 }
 
 // SingleTx
-// @Summary      进行单笔交易
-// @Tags         链上操作
+// @Summary      上传电子合同
+// @Tags         电子合同通信与修正模块
 // @Param		 from formData  string  yes "交易发送方"
 // @Param		 to formData  string  yes "交易接收方"
 // @Param		 money formData  string  yes "交易金额"
-// @Router       /blockchain/contract/singletx [post]
+// @Router       /amend/contract/singletx [post]
 func SingleTx(ctx *gin.Context) {
 	from := ctx.PostForm("from")
 	to := ctx.PostForm("to")
@@ -108,16 +109,17 @@ func SingleTx(ctx *gin.Context) {
 }
 
 // EditTX
-// @Summary      编辑交易
-// @Tags         链上操作
+// @Summary      请求修正电子合同
+// @Tags         电子合同通信与修正模块
 // @Param		 privateKey formData  string  yes "用户私钥"
 // @Param		 txHash formData  string  yes "交易地址"
 // @Param		 data formData  string  yes "编辑后的数据"
-// @Router       /blockchain/contract/edittx [post]
+// @Router       /amend/contract/edittx [post]
 func EditTX(ctx *gin.Context) {
 	privateKey := ctx.PostForm("privateKey")
 	txHash := ctx.PostForm("txHash")
 	data := ctx.PostForm("data")
+	time.Sleep(time.Millisecond * 500)
 	if err := store.EditTX(privateKey, txHash, data); err != nil {
 		config.Logger.Fatal(err.Error())
 		return

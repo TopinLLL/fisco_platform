@@ -10,7 +10,7 @@ import (
 
 // Register
 // @Summary      用户注册
-// @Tags         常规用户操作
+// @Tags         用户操作
 // @Param		  username formData  string  yes "账号"
 // @Param		  password formData  string  yes "密码"
 // @Param		  role_id formData  string  yes "角色id"

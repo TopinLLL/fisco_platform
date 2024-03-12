@@ -7,12 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// DeleteData
-// @Summary     数据提供用户删除数据
-// @Tags         数据提供用户操作
-// @Param		  data_name formData  string  yes "数据名称"
-// @Param		  data_content formData  string  yes "数据内容"
-// @Router       /data/delete [post]
 func DeleteData(ctx *gin.Context) {
 	dataName := ctx.PostForm("data_name")
 	dataContent := ctx.PostForm("data_content")
