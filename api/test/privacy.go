@@ -1,15 +1,20 @@
 package test
 
 import (
+	"context"
 	"encoding/json"
 	"fisco/config"
 	"fisco/dto"
 	"fisco/global"
+	"fisco/utils/response"
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/sessions"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 )
 
 type TeamMember struct {
@@ -50,7 +55,23 @@ func Privacy(ctx *gin.Context) {
 			ThumbDownPerson: content.ThumbDownPerson,
 		}
 	}
-	mockPrivacy(ctx)
+	mockTime()
+	conn, err := grpc.Dial(*addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	if err != nil {
+		log.Fatalf("did not connect: %v", err)
+	}
+	defer conn.Close()
+	c := NewTestClient(conn)
+
+	cont, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
+
+	res, err := c.GetTestResult(cont, &AmendableTest{TestNumber: 4})
+	if err != nil {
+		log.Fatalf("could not greet: %v", err)
+	}
+
+	response.Success(ctx, nil, res.Message)
 }
 
 // PrivacyDoor
@@ -62,7 +83,7 @@ func PrivacyDoor(ctx *gin.Context) {
 
 	signature := generateGroupSignature(teamMembers)
 	fmt.Println("群签名：")
-	time.Sleep(time.Second * 7)
+	mockTime()
 	for position, members := range signature {
 		fmt.Printf("%s：\n", position)
 		for _, member := range members {
@@ -85,5 +106,20 @@ func PrivacyDoor(ctx *gin.Context) {
 			ThumbDownPerson: content.ThumbDownPerson,
 		}
 	}
-	mockPrivacyDoor(ctx)
+	mockTime()
+	conn, err := grpc.Dial(*addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	if err != nil {
+		log.Fatalf("did not connect: %v", err)
+	}
+	defer conn.Close()
+	c := NewTestClient(conn)
+
+	cont, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
+
+	res, err := c.GetTestResult(cont, &AmendableTest{TestNumber: 3})
+	if err != nil {
+		log.Fatalf("could not greet: %v", err)
+	}
+	response.Success(ctx, nil, res.Message)
 }

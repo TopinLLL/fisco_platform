@@ -46,3 +46,7 @@ func mockPrivacyDoor(ctx *gin.Context) {
 	response.Success(ctx, nil, fmt.Sprintf("%s%s", "权限者组与门限为（5，3），（10，5），（15，8），（30，15）时实验数据如下（单位ms）:",
 		"493.2,580.3,764,891.9"))
 }
+
+func mockTime() {
+	time.Sleep(time.Second * 5)
+}

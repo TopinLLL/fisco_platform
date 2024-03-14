@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"math/big"
 	"strconv"
-	"time"
 
 	"github.com/FISCO-BCOS/go-sdk/client"
 	"github.com/FISCO-BCOS/go-sdk/conf"
@@ -119,7 +118,7 @@ func EditTX(ctx *gin.Context) {
 	privateKey := ctx.PostForm("privateKey")
 	txHash := ctx.PostForm("txHash")
 	data := ctx.PostForm("data")
-	time.Sleep(time.Millisecond * 500)
+	mockTime()
 	if err := store.EditTX(privateKey, txHash, data); err != nil {
 		config.Logger.Fatal(err.Error())
 		return
